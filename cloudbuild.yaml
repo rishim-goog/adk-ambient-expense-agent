@@ -1,0 +1,14 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/rishimukhop-playground/agy-test-dev/adk-ambient-expense-agent-dev:$COMMIT_SHA'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/rishimukhop-playground/agy-test-dev/adk-ambient-expense-agent-dev:latest'
+      - '.'
+images:
+  - 'us-central1-docker.pkg.dev/rishimukhop-playground/agy-test-dev/adk-ambient-expense-agent-dev:$COMMIT_SHA'
+  - 'us-central1-docker.pkg.dev/rishimukhop-playground/agy-test-dev/adk-ambient-expense-agent-dev:latest'
+options:
+  logging: CLOUD_LOGGING_ONLY
